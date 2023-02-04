@@ -1,10 +1,9 @@
+import Navbar from "./components/navbar/navbar.component";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <div className="App font-open-sans-condensed">
+      <Navbar className='drop-shadow-2xl'/>
     </div>
   );
 }
