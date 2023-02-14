@@ -5,19 +5,20 @@ export const ProductContext = createContext({
 });
 
 export const ProductProvider = ({ children }) => {
-  const [product, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const getProducts = () => {
     fetch("https://fakestoreapi.com/products?limit=6")
       .then((res) => res.json())
-      .then((json) => console.log(json));
+      .then((items) => setProducts(items));
   };
 
   useEffect(() => {
-    getProducts()
+    getProducts();
   }, []);
 
-  const value = { product };
+  const value = { products };
+//   console.log(products);
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
