@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Cart from "../cart/cart.component";
+import Button from "../button/button.component";
 
 const Navbar = () => {
   const [cartState, setCartState] = useState(false);
@@ -15,12 +16,12 @@ const Navbar = () => {
       <span className="text-3xl font-semibold tracking-wide ">
         SHOPPING CART
       </span>
-      <button
+      <Button
         onClick={handleClick}
-        className="px-8 py-2 text-2xl font-semibold tracking-wide text-white bg-orange-400 rounded-full active:bg-orange-500"
+        buttonType='nav'
       >
         CART <span className="pl-2">6</span>
-      </button>
+      </Button>
       {cartState && <Cart cartToggle={cartToggle} />}
     </div>
   );

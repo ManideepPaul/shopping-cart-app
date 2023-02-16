@@ -1,3 +1,5 @@
+import Button from "../button/button.component";
+
 const ProductCard = ({ product }) => {
   const { title, image, price } = product;
   return (
@@ -5,6 +7,7 @@ const ProductCard = ({ product }) => {
       <div className="pb-4 text-lg font-extrabold">{title}</div>
       <img src={image} alt={title}  className="w-56 h-64"/>
       <span className="pt-4 text-xl font-bold">₹{price}</span>
+      <Button buttonType='addToCart' children='ADD TO CART' />
     </div>
   );
 };
