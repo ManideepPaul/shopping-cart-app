@@ -1,10 +1,9 @@
 import { useContext } from "react";
-import { ProductContext } from "../context/product/product.context";
+import { ProductContext } from '../../context/product/product.context'
 import ProductCard from "../product-card/product-card.component";
 
 const Products = () => {
   const { products } = useContext(ProductContext);
-  console.log(products);
   return (
     <div className="grid grid-cols-3 gap-8 m-5">
       {products.map((product) => (
