@@ -1,12 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Cart from "../cart/cart.component";
 import Button from "../button/button.component";
 import { CartContext } from "../../context/cartProducts/cart.context";
 
-
 const Navbar = () => {
-  const {cartCount, cartToggle, cartState} = useContext(CartContext);
-  
+  const { cartCount, cartToggle, cartState } = useContext(CartContext);
+
   const handleClick = () => {
     cartToggle();
   };
@@ -16,10 +15,7 @@ const Navbar = () => {
       <span className="text-3xl font-semibold tracking-wide ">
         SHOPPING CART
       </span>
-      <Button
-        onClick={handleClick}
-        buttonType='nav'
-      >
+      <Button onClick={handleClick} buttonType="nav">
         CART <span className="pl-2">{cartCount}</span>
       </Button>
       {cartState && <Cart cartToggle={cartToggle} />}
