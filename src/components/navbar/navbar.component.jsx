@@ -5,15 +5,12 @@ import { CartContext } from "../../context/cartProducts/cart.context";
 
 
 const Navbar = () => {
-  const [cartState, setCartState] = useState(false);
 
-  const {cartCount} = useContext(CartContext);
+  const {cartCount, cartToggle, cartState} = useContext(CartContext);
+  console.log(cartState)
 
   const handleClick = () => {
     cartToggle();
-  };
-  const cartToggle = () => {
-    setCartState(!cartState);
   };
 
   return (

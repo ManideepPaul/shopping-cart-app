@@ -7,7 +7,7 @@ const Cart = ({ cartToggle }) => {
   const { cartItems, totalCost } = useContext(CartContext);
   return (
     <dialog
-      class="open:bg-white border-2 p-6 rounded-lg shadow-gray-200 shadow-md backdrop:bg-gray-500 z-10 w-96"
+      className="z-10 p-6 border-2 rounded-lg shadow-md open:bg-white shadow-gray-200 backdrop:bg-gray-500 w-96"
       open
     >
       <div className="flex justify-between pb-5 text-4xl border-b-2">
@@ -23,7 +23,7 @@ const Cart = ({ cartToggle }) => {
         <span>Remove</span>
       </header> */}
       {cartItems.map((cartItem) => (
-        <CartItem cartItem={cartItem} />
+        <CartItem cartItem={cartItem} key={cartItem.id} />
       ))}
        <div className="flex items-center justify-between">
         <Button buttonType="checkout" children="checkout">Checkout</Button>
