@@ -44,9 +44,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const cartToggle = () => {
-    console.log('here')
     setCartState(!cartState);
-    console.log(cartState)
   };
   console.log(cartItems);
   const value = { cartItems, addItemsToCart, cartCount, totalCost, cartToggle, cartState };
