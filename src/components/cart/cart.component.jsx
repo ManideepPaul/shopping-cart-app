@@ -22,12 +22,24 @@ const Cart = ({ cartToggle }) => {
         <span>Price</span>
         <span>Remove</span>
       </header> */}
-      {cartItems.length === 0 ? <div className="m-16 text-2xl font-semibold text-center">Your Cart is empty.</div> : (cartItems.map((cartItem) => (
-        <CartItem cartItem={cartItem} key={cartItem.id} />
-      )))}
-       <div className="flex items-center justify-between">
-        <Button buttonType="checkout" children="checkout">Checkout</Button>
-        <span className="text-xl">&#x20b9; <span  className="text-2xl font-extrabold">{totalCost}</span></span>
+      <div className="overflow-auto h-96">
+        {cartItems.length === 0 ? (
+          <div className="m-16 text-2xl font-semibold text-center">
+            Your Cart is empty.
+          </div>
+        ) : (
+          cartItems.map((cartItem) => (
+            <CartItem className="mx-4 " cartItem={cartItem} key={cartItem.id} />
+          ))
+        )}
+      </div>
+      <div className="flex items-center justify-between">
+        <Button buttonType="checkout" children="checkout">
+          Checkout
+        </Button>
+        <span className="text-xl">
+          &#x20b9; <span className="text-2xl font-extrabold">{totalCost}</span>
+        </span>
       </div>
     </dialog>
   );
