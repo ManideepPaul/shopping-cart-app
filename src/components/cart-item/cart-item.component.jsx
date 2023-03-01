@@ -2,11 +2,19 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartProducts/cart.context";
 
 const CartItem = ({ cartItem }) => {
-  const { removeItem } = useContext(CartContext)
+  const { removeItem, addItemsToCart, reduceQuantity } = useContext(CartContext)
   const { image, quantity, price, id } = cartItem;
 
   const handleDelete = () => {
     removeItem(id)
+  }
+
+  const handleIncrement = () => {
+    addItemsToCart(cartItem)
+  }
+
+  const handleDecrement = () => {
+    reduceQuantity(id)
   }
 
   return (
@@ -16,9 +24,9 @@ const CartItem = ({ cartItem }) => {
       <div className="flex items-center justify-around w-full">
         <span className="text-xl font-extrabold">&#x20b9; {price}</span>
         <span className="flex justify-between w-12 text-xl font-extrabold">
-          <button>&#10094;</button>
+          <button onClick={handleDecrement}>&#10094;</button>
           <span>{quantity}</span>
-          <button>&#10095;</button>
+          <button onClick={handleIncrement}>&#10095;</button>
         </span>
       </div>
     </div>
