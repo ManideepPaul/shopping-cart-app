@@ -29,7 +29,7 @@ const Cart = ({ cartToggle }) => {
           </div>
         ) : (
           cartItems.map((cartItem) => (
-            <CartItem className="mx-4 " cartItem={cartItem} key={cartItem.id} />
+            <CartItem cartItem={cartItem} key={cartItem.id} />
           ))
         )}
       </div>
