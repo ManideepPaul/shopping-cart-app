@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-between px-8 py-4 shadow-md shadow-gray-200">
+    <div className="sticky top-0 z-10 flex flex-wrap justify-between px-8 py-4 bg-white shadow-md shadow-gray-200">
       <span className="text-3xl font-semibold tracking-wide ">
         SHOPPING CART
       </span>
